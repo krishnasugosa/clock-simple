@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="jam">00</div>
+        <span>:</span>
+        <div id="menit">00</div>
+        <span>:</span>
+        <div id="detik">00</div>
+    </div>
+    
+</body>
+<script>
+
+
+    setInterval(() => {
+        var date = new Date();
+        let jam =  document.getElementById("jam");
+        let menit = document.getElementById("menit");
+        let detik = document.getElementById("detik");
+        jam.textContent = date.getHours();
+        menit.textContent = date.getMinutes();
+        detik.textContent = date.getSeconds();
+
+        if(date.getHours() >= 6 && date.getHours() < 12){
+            document.body.style.backgroundColor = "skyblue"
+        }else if(date.getHours() >= 12 && date.getHours() < 18){
+            document.body.style.backgroundColor = "orange";
+        }else if(date.getHours() >= 18 && date.getHours() <=24){
+            document.body.style.backgroundColor = "rgb(9, 9, 9)"
+        }
+    },10)
+   
+  
+   
+    
+</script>
+</html>
